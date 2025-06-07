@@ -1,8 +1,7 @@
 "use client"
-import Box from "./components/box";
 import Email from "./components/email";
 import Hero from "./components/hero";
-import NavBar from "./components/nav-bar.component";
+import NavBar from "./components/nav-bar";
 import SocialMedia from "./components/social-media";
 
 export default function Home() {
