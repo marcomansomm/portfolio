@@ -17,7 +17,7 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1 className="text-green-400 font-mono text-[clamp(14px,5vw,18px)] mb-7 ml-1">Hi, my name is</h1>;
+  const one = <h1 className="text-green font-mono text-[clamp(14px,5vw,18px)] mb-7 ml-1">Hi, my name is</h1>;
 
   const two = (
     <h2 className="text-white font-bold text-5xl sm:text-6xl md:text-7xl leading-tight">
@@ -26,7 +26,7 @@ const Hero = () => {
   );
 
   const three = (
-    <h3 className="text-slate-400 font-bold text-4xl sm:text-5xl md:text-6xl leading-snug mt-2">
+    <h3 className="text-slate font-bold text-4xl sm:text-5xl md:text-6xl leading-snug mt-2">
       Jr. FullStack Developer.
     </h3>
   );
@@ -38,7 +38,7 @@ const Hero = () => {
         href="https://upstatement.com/"
         target="_blank"
         rel="noreferrer"
-        className="text-green-400 hover:underline"
+        className="text-green hover:underline"
       >
         Lorem Ipsum
       </a>
@@ -48,7 +48,7 @@ const Hero = () => {
 
   const five = (
     <a
-      className="inline-block mt-10 border-2 border-green-400 text-green-400 px-6 py-3 rounded-md font-mono text-sm hover:bg-green-400 hover:text-black transition"
+      className="inline-block mt-10 border-2 border-green text-green px-6 py-3 rounded-md font-mono text-sm hover:bg-green hover:text-black transition"
       href="https://www.newline.co/courses/build-a-spotify-connected-app"
       target="_blank"
       rel="noreferrer"
@@ -60,8 +60,8 @@ const Hero = () => {
   const items = [one, two, three, four, five];
 
   return (
-    <div className="flex flex-row items-center justify-around w-full max-w-8xl mx-auto">
-      <section className="flex flex-col items-start justify-center h-screen px-4 md:px-20">
+    <div className="flex flex-row items-center justify-around w-full max-w-7xl mx-auto">
+      <div className="flex flex-col items-start justify-center h-screen px-4 md:px-20">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -73,19 +73,18 @@ const Hero = () => {
               {item}
             </motion.div>
           ))}
-      </section>
-      <section>
+      </div>
+      <div>
         <motion.div
           initial={shouldReduceMotion ? {} : { opacity: 0, y: 20 }}
           animate={isMounted ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: 'easeOut', delay: items.length * 0.2 }}
           className="flex justify-center relative md:mx-auto mt-12 group"
         >
-          <Profile />
+          <Profile pathPicture='me.jpg'/>
         </motion.div>
-      </section>
+      </div>
     </div>
-    
   );
 };
 

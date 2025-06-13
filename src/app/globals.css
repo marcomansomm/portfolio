@@ -47,6 +47,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --color-green: #64ffda;
+  --color-slate: var(--slate);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

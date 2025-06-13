@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const Profile = () => {
+const Profile = ({ pathPicture } : { pathPicture : string }) => {
     return (
     <motion.div
       whileHover="hover"
@@ -17,7 +17,7 @@ const Profile = () => {
           hover: { x: 4, y: 4 },
         }}
         transition={{ duration: 0.5 }}
-        className="w-full h-full absolute top-0 left-0 bg-green-500 rounded-lg shadow-lg z-0"
+        className="w-full h-full absolute top-0 left-0 bg-marcoantonio bg-green rounded-lg shadow-lg z-0"
       />
       <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-navy mix-blend-screen z-10 pointer-events-none" />
       <motion.div
@@ -26,7 +26,7 @@ const Profile = () => {
           hover: { x: 16, y: 16 },
         }}
         transition={{ duration: 0.5 }}
-        className="absolute w-full h-full rounded-lg border-2 border-green-500 z-0"
+        className="absolute w-full h-full rounded-lg border-2 border-green z-0"
       />
       <motion.div
         variants={{
@@ -37,7 +37,7 @@ const Profile = () => {
         className="relative z-20 rounded-lg overflow-hidden"
       >
         <Image
-          src="/images/me.jpg"
+          src={`/images/${pathPicture}`}
           alt="Me"
           width={450}
           height={450}
